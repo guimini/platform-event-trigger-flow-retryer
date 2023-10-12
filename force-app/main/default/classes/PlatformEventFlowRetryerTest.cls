@@ -21,10 +21,16 @@ public with sharing class PlatformEventFlowRetryerTest {
 
   @isTest
   public static void rejectsInvalidFlow() {
+    FlowDefinitionView def = [
+      SELECT ApiName, SourceTemplate.ApiName
+      FROM FlowDefinitionView
+      WHERE SourceTemplateId = NULL
+      LIMIT 1
+    ];
     try {
       Test.startTest();
       PlatformEventFlowRetryer retryer = new PlatformEventFlowRetryer(
-        'Abonn_Subscriber_Process'
+        def.ApiName
       );
       Test.stopTest();
       Assert.fail('must Throw with invalid flow');

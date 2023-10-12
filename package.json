@@ -1,7 +1,6 @@
 {
   "name": "@guimini/platform-event-trigger-flow-retryer",
-  "private": true,
-  "version": "O.1",
+  "version": "0.1.0",
   "description": "A simple way to enable App Builders to create Flows that can be retried when processing Platform Events",
   "bugs": {
     "url": "https://github.com/guimini/platform-event-trigger-flow-retryer/issues"
